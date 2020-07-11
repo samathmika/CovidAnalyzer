@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>COVID ANALYZER</title>
+
+    <!-- Bootstrap -->
+    <link href="{{url_for('static',filename='/styles/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{url_for('static',filename='/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{url_for('static',filename='/styles/nprogress/nprogress.css')}}" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="{{url_for('static',filename='/styles/iCheck/skins/flat/green.css')}}" rel="stylesheet">
+	
+    <!-- bootstrap-progressbar -->
+    <link href="{{url_for('static',filename='/styles/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css')}}" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="{{url_for('static',filename='/styles/jqvmap/dist/jqvmap.min.css')}}" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{url_for('static',filename='/styles/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{url_for('static',filename='/styles/custom.min.css')}}" rel="stylesheet">
+  </head>
+
+  <body class="nav-md"style="background-image :url({{ url_for('static', filename='/images/backg.jpg')}})">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" >
+              <a href="{{url_for('home')}}" class="site_title"><i class="fa fa-sellsy"--></i> <span>COVID ANALYZER</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- /menu profile quick info -->
+
+            <!-- sidebar menu -->
+            <div class="wrap">
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+           
+              <div class="menu_section" >
+                
+                
+                <ul class="nav side-menu">
+                   <li><a><i class="fa fa-heart"></i> Positive <span class="fa fa-chevron-down"></span></a>
+                     <ul class="nav child_menu">
+                      <li><a href="{{url_for('positive')}}">Home</a></li>
+                      <li><a href="{{url_for('positive')}}">Verified vs Non-Verified</a></li>
+                      <li><a href="{{url_for('positive')}}">Likes Analysis</a></li>
+                       <li><a href="{{url_for('positive')}}">Varied Emotions</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-twitter"></i> Tweets <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{url_for('tweets')}}">Home</a></li>
+                      <li><a href="{{url_for('tweets')}}">Emotional Dominance</a></li>
+                    </ul>
+                      
+                  </li>
+                 <li><a><i class="fa fa-thumbs-o-up"></i> Sentiments <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{url_for('sentiment')}}">Home</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Word length & Max features</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Sentiment score classification</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Negative tweets</a></li>
+                    </ul>
+                  </li>
+          
+                  <li><a href="{{url_for('data_visualisation')}}"><i class="fa fa-globe"></i> Resources</a>
+                  </li>
+                  <li><a href="{{url_for('weekly_updates')}}"><i class="fa fa-line-chart"></i> Weekly Updates </a>
+                  </li>
+                
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScKFZpTWttjoungBpsHfSiaXWKD5kmQg5kVafkS9f8EHKL-fg/viewform?usp=sf_link"><i class="fa fa-edit"></i> Reviews </a></li>
+                </ul>
+              </div>
+            </div>
+              </div>
+
+            
+          </div>
+        
+        </div>
+
+
+        <!-- top navigation -->
+        <div class="top_nav">
+          <div class="nav_menu">
+              <div class="nav toggle">
+                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+
+              </div>
+              
+          </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+     <!-- page content -->
+        <div class="right_col" role="main">
+          <!-- top tiles -->
+          <div class="row" style="display: inline-block;" ><b>
+         <h3 style="font-family: 'Courier New'">"There is <font color="white"> Hope </font>,even when Your Brain tells there isn't"</h3> </b><br/>
+        </div>
+                    <!-- /top tiles -->
+
+
+          
+          <br/>
+
+
+          <div class="row" id="vnon">
+        <div class="col-md-8 col-sm-8 ">              
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title" >
+                  <h2>EMOTIONS</h2>
+                  <ul class="nav navbar-right panel_toolbox" >
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  
+                  <div class="widget_summary">
+                  <img src="{{url_for('static',filename='images/dateall1.png')}}" style="height: 250px;width: 450px">
+                    <div class="clearfix"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          
+        
+
+            <div class="col-md-4 col-sm-4 ">
+              <div class="x_panel tile fixed_height_320 " style="overflow:visible;">
+                <div class="x_title">
+                  <h2>HAPPY</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <img src="{{url_for('static',filename='images/datehappy1.png')}}"style="height: 210px;width: 270px">
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+          <div class="row" id="vnon">
+             <div class="col-md-4 col-sm-4 ">
+              <div class="x_panel tile fixed_height_320 " style="overflow:visible;">
+                <div class="x_title">
+                  <h2>INFORMATIVE</h2>
+                  <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <img src="{{url_for('static',filename='images/dateinfo1.png')}}"style="height: 210px;width: 270px">
+                </div>
+              </div>
+            </div>
+        <div class="col-md-8 col-sm-8 ">              
+              <div class="x_panel tile fixed_height_320">
+                <div class="x_title" >
+                  <h2>LABELS</h2>
+                  <ul class="nav navbar-right panel_toolbox" >
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+
+                  </ul>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  
+                  <div class="widget_summary">
+                  <img src="{{url_for('static',filename='images/datelabel1.png')}}" style="height: 250px;width: 450px">
+                    <div class="clearfix"></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      
+              <div class="row" id="ssc">
+
+                <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>POSITIVE</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/datepos1.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+              </div>
+
+                <div class="col-md-4">
+                  <img src="{{url_for('static',filename='images/posweekly.jpg')}}"style="height: 290px;width: 270px">
+
+              </div>
+                
+                <!-- start of weather widget -->
+                <div class="col-md-4 col-sm-4 ">
+                  <div class="x_panel">
+                  <div class="x_title">
+                    <h2>SENTIMENTS</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/datepnn1.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+
+                <!-- end of weather widget -->
+              </div>
+            </div>
+
+            <div class="row" id="week">
+
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>TOTAL TWEETS</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/datetot1.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>SAD</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/datesad1.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+              </div>
+
+                 <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>ANGRY</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/dateangry1.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+              </div>
+                
+                
+            </div>
+
+
+
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right"><center>STAY HOME STAY SAFE!</center>
+            The Curious Four
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  
+
+
+    <!-- jQuery -->
+    <script src="{{url_for('static',filename='/styles/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{url_for('static',filename='/styles/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{url_for('static',filename='/styles/fastclick/lib/fastclick.js')}}"></script>
+    <!-- NProgress -->
+    <script src="{{url_for('static',filename='/styles/nprogress/nprogress.js')}}"></script>
+    <!-- Chart.js -->
+    <script src="{{url_for('static',filename='/styles/Chart.js/dist/Chart.min.js')}}"></script>
+    <!-- gauge.js -->
+    <script src="{{url_for('static',filename='/styles/gauge.js/dist/gauge.min.js')}}"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="{{url_for('static',filename='/styles/bootstrap-progressbar/bootstrap-progressbar.min.js')}}"></script>
+    <!-- iCheck -->
+    <script src="{{url_for('static',filename='/styles/iCheck/icheck.min.js')}}"></script>
+    <!-- Skycons -->
+    <script src="{{url_for('static',filename='/styles/skycons/skycons.js')}}"></script>
+    <!-- Flot -->
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.time.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.stack.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.resize.js')}}"></script>
+    <!-- Flot plugins -->
+    <script src="{{url_for('static',filename='/styles/flot.orderbars/js/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/flot.curvedlines/curvedLines.js')}}"></script>
+    <!-- DateJS -->
+    <script src="{{url_for('static',filename='/styles/DateJS/build/date.js')}}"></script>
+    <!-- JQVMap -->
+    <script src="{{url_for('static',filename='/styles/jqvmap/dist/jquery.vmap.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/jqvmap/dist/maps/jquery.vmap.world.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/jqvmap/examples/js/jquery.vmap.sampledata.js')}}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{url_for('static',filename='/styles/moment/min/moment.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{url_for('static',filename='/styles/custom.min.js')}}"></script>
+	
+  </body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>COVID ANALYZER </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>COVID ANALYZER</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            
+           
+
+            <!-- sidebar menu -->
+            <div class="wrap">
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+           
+              <div class="menu_section"  >
+                
+                
+                <ul class="nav side-menu"  >
+                   <li><a><i class="fa fa-home"></i> Positive <span class="fa fa-chevron-down"></span></a>
+                     <ul class="nav child_menu">
+                      <li><a href="index2.html">Home</a></li>
+                      <li><a href="index2.html#vvsn">Verified vs Non-Verified</a></li>
+                      <li><a href="index2.html#likesanalysis">Likes Analysis</a></li>
+                       <li><a href="index2.html#ve">Varied Emotions</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Tweets <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index3.html">Home</a></li>
+                      <li><a href="index3.html#vvsn">Verified vs Non-Verified</a></li>
+                      <li><a href="index3.html#ed">Emotional Dominance</a></li>
+                    </ul>
+                      
+                  </li>
+                 <li><a><i class="fa fa-desktop"></i> Sentiments <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index4.html">Home</a></li>
+                      <li><a href="index4.html#vnon">Word length & Max features</a></li>
+                      <li><a href="index4.html#ssc">Sentiment score classification</a></li>
+                      <li><a href="index4.html#ssc">Negative tweets</a></li>
+                    </ul>
+                  </li>
+          
+                  <li><a href="chartjs.html"><i class="fa fa-bar-chart-o"></i> Data Visualisation </a>
+                  </li>
+                
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScKFZpTWttjoungBpsHfSiaXWKD5kmQg5kVafkS9f8EHKL-fg/viewform?usp=sf_link"><i class="fa fa-desktop"></i> Reviews </a></li>
+                </ul>
+              </div>
+            </div>
+              </div>
+          </div>
+        </div>
+  
+            <!-- /sidebar menu -->
+
+           
+            
+          
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <div class="nav toggle">
+                  <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                </div>
+                
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          <div class="row" style="display: inline-block;">
+            <div class=" top_tiles" style="margin: 10px 0;">
+              <div class="col-md-3 col-sm-3  tile">
+                <span>Total Sessions</span>
+                <h2>231,809</h2>
+                
+              </div>
+              <div class="col-md-3 col-sm-3  tile">
+                <span>Total Revenue</span>
+                <h2>$ 231,809</h2>
+                
+              </div>
+              <div class="col-md-3 col-sm-3  tile">
+                <span>Total Sessions</span>
+                <h2>231,809</h2>
+               
+              </div>
+              <div class="col-md-3 col-sm-3  tile"style="height: 160px;">
+                <span>Total Sessions</span>
+                <h2>231,809</h2>
+                <span class="sparkline_one" style="height: 160px;">
+                      
+                  </span>
+              </div>
+            </div>
+          </div>
+            <br/>
+
+          <!--Neutral and Negative Tweets Analysis-->
+          
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel">
+                  <div id="likesanalysis">
+                  <div class="x_title">
+                    <h2>Neutral and Negative Tweets </h2>
+                     <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                          </ul>
+                    <div class="filter">
+                     
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="col-md-9 col-sm-12 ">
+                      <div class="demo-container" style="height:280px">
+                        
+                        <table style="border-collapse: separate;border-spacing: 0 45px 25px 25px">
+                          <tr>
+                            <td style="margin-right: 1px;padding: 35px; ">
+                        <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\neuvernon.png" style="height: 250px;width: 250px"></td>
+                        <td><img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\negvernon.png" style="height: 250px;width: 250px"></td>
+                      </tr>
+                    </table>
+
+                    </div>
+                  </div>
+                <div class="col-md-3 col-sm-12 ">
+                      <div>
+                        <div class="x_title">
+                          <h2>Analysis</h2>
+                         
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                      </div>
+                    </div>
+
+                  </div>
+              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+          
+
+
+            <div class="row">
+               <div id="ed">
+              <div class="col-md-4 col-sm-6 ">
+                <div class="x_panel tile fixed_height_320 ">
+                 
+                  <div class="x_title">
+                    <h2>Angry Tweets</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\Angry.png"style="height:230px;width: 290px">
+                </div>
+              </div>
+            </div>
+
+              <div class="col-md-4 col-sm-6 ">
+                <div class="x_panel tile fixed_height_320">
+                  <div class="x_title">
+                    <h2>Emotional Dominance</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                     <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\Labels.png"style="height:230px;width: 290px">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 col-sm-6 ">
+                <div class="x_panel tile fixed_height_320">
+                  <div class="x_title">
+                    <h2>Sad Tweets </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\Sad.png"style="height:230px;width: 290px">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+
+              <div class="row">
+              <div class="col-md-4 col-sm-6 tile fixed_height_320">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Happy Tweets</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                      <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\Happy.png"style="height:230px;width: 290px">
+                    
+                  </div>
+                </div>
+              </div>
+
+              <!-- start of weather widget -->
+              <div class="col-md-4 col-sm-6 ">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Today's Weather <small>Sessions</small></h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    
+                      
+                      <div class="clearfix"></div>
+                    </div>
+                  </div>
+                </div>
+
+              
+              <!-- end of weather widget -->
+
+              <div class="col-md-4 col-sm-6 ">
+                <div class="x_panel fixed_height_320 ">
+                  <div class="x_title">
+                    <h2>Informative tweets</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="C:\Users\pjai1\OneDrive\Desktop\IBM\images\Informative.png"style="height:230px;width: 290px">
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+
+            
+          
+        
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            The Curious Four
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div>
+  
+
+
+    <!-- jQuery -->
+    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+   <script src="../vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FastClick -->
+    <script src="../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="../vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
+    <!-- jQuery Sparklines -->
+    <script src="../vendors/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+    <!-- morris.js -->
+    <script src="../vendors/raphael/raphael.min.js"></script>
+    <script src="../vendors/morris.js/morris.min.js"></script>
+    <!-- gauge.js -->
+    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
+    <!-- bootstrap-progressbar -->
+    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <!-- Skycons -->
+    <script src="../vendors/skycons/skycons.js"></script>
+    <!-- Flot -->
+    <script src="../vendors/Flot/jquery.flot.js"></script>
+    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
+    <script src="../vendors/Flot/jquery.flot.time.js"></script>
+    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
+    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
+    <!-- Flot plugins -->
+    <script src="../vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+    <script src="../vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+    <script src="../vendors/flot.curvedlines/curvedLines.js"></script>
+    <!-- DateJS -->
+    <script src="../vendors/DateJS/build/date.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="../vendors/moment/min/moment.min.js"></script>
+    <script src="../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="../build/js/custom.min.js"></script>
+
+  </body>
+</html>

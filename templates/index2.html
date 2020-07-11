@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title> COVID ANALYZER </title>
+
+    <!-- Bootstrap -->
+    <link href="{{url_for('static',filename='/styles/bootstrap/dist/css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="{{url_for('static',filename='/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="{{url_for('static',filename='/styles/nprogress/nprogress.css')}}" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="{{url_for('static',filename='/styles/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="{{url_for('static',filename='/styles/custom.min.css')}}" rel="stylesheet">
+  </head>
+        <body class="nav-md"style="background-image :url({{ url_for('static', filename='/images/backg.jpg')}})">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" >
+              <a href="{{url_for('home')}}" class="site_title"><i class="fa fa-sellsy"></i> <span>COVID ANALYZER</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- /menu profile quick info -->
+
+           
+        <!-- sidebar menu -->
+        <div class="wrap">
+         <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+           
+              <div class="menu_section">
+                
+                
+                <ul class="nav side-menu">
+                   <li><a><i class="fa fa-heart"></i> Positive <span class="fa fa-chevron-down"></span></a>
+                     <ul class="nav child_menu">
+                      <li><a href="{{url_for('positive')}}">Home</a></li>
+                      <li><a href="#vvsn">Verified vs Non-Verified</a></li>
+                      <li><a href="#likesanalysis">Likes Analysis</a></li>
+                       <li><a href="#ve">Varied Emotions</a></li>
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-twitter"></i> Tweets <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{url_for('tweets')}}">Home</a></li>
+                      <li><a href="{{url_for('tweets')}}">Emotional Dominance</a></li>
+                    </ul>
+                      
+                  </li>
+                 <li><a><i class="fa fa-thumbs-o-up"></i> Sentiments <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="{{url_for('sentiment')}}">Home</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Word length & Max features</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Sentiment score classification</a></li>
+                      <li><a href="{{url_for('sentiment')}}">Negative tweets</a></li>
+                    </ul>
+                  </li>
+          
+                  <li><a href="{{url_for('data_visualisation')}}"><i class="fa fa-globe"></i> Resources</a>
+                  </li>
+                  <li><a href="{{url_for('weekly_updates')}}"><i class="fa fa-line-chart"></i> Weekly Updates </a>
+                  </li>
+                
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScKFZpTWttjoungBpsHfSiaXWKD5kmQg5kVafkS9f8EHKL-fg/viewform?usp=sf_link"><i class="fa fa-edit"></i> Reviews </a></li>
+                </ul>
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        
+  
+
+            
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+         
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                
+                
+            </div>
+          </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+          
+            <div class="row" >
+              <div class="col-lg-12">
+                <div style="width:1000px; margin:1px auto;">
+            <div class="top_tiles">
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 "style="padding-right: 10px;">
+                <div class="tile-stats">
+                 <img src="{{url_for('static',filename='images/pos1.jpg')}}" style="height: 250px;width: 235px">
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+                <div class="tile-stats">
+                 <img src="{{url_for('static',filename='images/pos2.jpg')}}" style="height: 250px;width: 235px">
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+                <div class="tile-stats">
+                  <img src="{{url_for('static',filename='images/pos4.png')}}" style="height: 250px;width: 235px">
+                </div>
+              </div>
+              <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 ">
+                <div class="tile-stats">
+                  <img src="{{url_for('static',filename='images/pos11.jpg')}}" style="height: 250px;width: 235px">
+            </div></div>
+          </div></div>
+        </div>
+      </div>
+    </br>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="x_panel" id="likesanalysis">
+                  <div class="x_title">
+                    <h2>Likes Analysis </h2>
+                     <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                          </ul>
+                    
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <div class="col-md-9 col-sm-12 ">
+                      <div class="demo-container" style="height:280px">
+                        <!--div id="chart_plot_02" class="demo-placeholder"></div-->
+                        <img src="{{url_for('static',filename='images/impactcluster.png')}}" style="height: 320px;width: 650px">
+                      </div>
+                      <div class="tiles">
+                        <div class="col-md-4 tile">
+                          <span>Highest follower count</span>
+                          <h2>{{var1}}</h2>
+                          
+                        </div>
+                        <div class="col-md-4 tile">
+                          <span>High favorite count & low follower count </span>
+                          <h2>{{var2}}</h2>
+                          
+                        </div>
+                        <div class="col-md-4 tile">
+                          <span>High follower count & low favorite count</span>
+                          <h2>{{var3}}</h2>
+                          
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="col-md-3 col-sm-12 ">
+                      <div>
+                        <div class="x_title">
+                          <h2>Top Profiles</h2>
+                             <a href="https://twitter.com/Trump/status/1276272952930156544"><img src="{{url_for('static',filename='images/twitter.png')}}" style="height:50px width:50px"></a>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            
+
+
+            <div class="row">
+              
+                 <div class="col-md-12">
+                <div class="x_panel">
+                  <div id="ve">
+                  <div class="x_title">
+                    <h2>Emotions portrayed by tweets</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+
+                   
+                      <div class="col-md-7" >
+                        <table style="border-collapse: separate;border-spacing: 0 45px 25px 25px">
+                          <tr>
+                            <td style="margin-right: 1px;padding: 35px; ">
+                          <img src="{{url_for('static',filename='images/labelsvsverified.png')}}"style="height: 330px;width: 400px"></td>
+                                
+                                <td><img src="{{url_for('static',filename='images/labelsvsnv.png')}}"style="height: 330px;width: 400px"></td> 
+                               </tr>
+                             </td>
+
+                               </table>      
+                         
+                      </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    
+
+
+            <div class="row">
+              <div id="vvsn">
+              <div class="col-md-4">
+                <div class="x_panel">
+
+                  <div class="x_title">
+                    <h2>Verified Accounts</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                    
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <article class="media event">
+                   <img src="{{url_for('static',filename='images/verifiedpie.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                 </article>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Verified VS Non-Verified </h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                     
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/posvernon.png')}}" style="height: 240px;width: 260px">
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Non-Verified accounts</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                    <img src="{{url_for('static',filename='images/nonverifiedpie.png')}}" style="height: 240px;margin-right:0px;width: 290px">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right"><center>STAY HOME STAY SAFE!!</center>
+            The Curious Four
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+</div>
+</div>
+
+    <!-- jQuery -->
+    <script src="{{url_for('static',filename='/styles/jquery/dist/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+   <script src="{{url_for('static',filename='/styles/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
+    <!-- FastClick -->
+    <script src="{{url_for('static',filename='/styles/fastclick/lib/fastclick.js')}}"></script>
+    <!-- NProgress -->
+    <script src="{{url_for('static',filename='/styles/nprogress/nprogress.js')}}"></script>
+    <!-- Chart.js -->
+    <script src="{{url_for('static',filename='/styles/Chart.js/dist/Chart.min.js')}}"></script>
+    <!-- jQuery Sparklines -->
+    <script src="{{url_for('static',filename='/styles/jquery-sparkline/dist/jquery.sparkline.min.js')}}"></script>
+    <!-- Flot -->
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.pie.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.time.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.stack.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/Flot/jquery.flot.resize.js')}}"></script>
+    <!-- Flot plugins -->
+    <script src="{{url_for('static',filename='/styles/flot.orderbars/js/jquery.flot.orderBars.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/flot-spline/js/jquery.flot.spline.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/flot.curvedlines/curvedLines.js')}}"></script>
+    <!-- DateJS -->
+    <script src="{{url_for('static',filename='/styles/DateJS/build/date.js')}}"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="{{url_for('static',filename='/styles/moment/min/moment.min.js')}}"></script>
+    <script src="{{url_for('static',filename='/styles/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="{{url_for('static',filename='/styles/custom.min.js')}}"></script>
+  </body>
+</html>
