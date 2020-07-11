@@ -1,0 +1,2 @@
+# CovidAnalyzer
+Positivity channel
